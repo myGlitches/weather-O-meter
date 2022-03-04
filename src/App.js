@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from "./components/Navbar";
+import Cards from "./components/cards/Cards";
+import Map from "./components/Map";
+import SearchContainer from "./components/search/SearchContainer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="container">
+      <div className="navbarDiv">
+      <Navbar/>
+      </div>
+      <div className="subContainer">
+      <div className="leftcontentsubContainer">
+        <SearchContainer/>
+        <div className="cards">
+          <Cards/>
+        </div>
+      </div>
+      <div className="rightcontentsubContainer">
+        <div className="mapContainer">
+          <Map/>
+        </div>
+        <div className="underMapContainer">
+          <div className="underMapContainerText">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          Nulla rhoncus lacinia vulputate. 
+          Nulla vel sagittis diam. Sed at viverra sem. 
+          Curabitur lobortis ornare justo, et pharetra lacus facilisis eget.
+          Sed mollis massa ac sagittis tempor.
+          </div>
+        </div>
+      </div>
+      </div>
     </div>
   );
 }
