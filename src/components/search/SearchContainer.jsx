@@ -14,7 +14,9 @@ function SearchContainer() {
         {Object.keys(weatherData).length !== 0 ? (
           <ShowWeather data={weatherData} />
         ) : (
-          <h2> Test </h2>
+          <h2>
+            This is a Weather App which can show the temperature of any city.{" "}
+          </h2>
         )}
       </div>
     </div>
