@@ -9,7 +9,6 @@ function SearchWeather({ setWeatherData }) {
         `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
       )
       const data = await response.json()
-      console.log(data)
       setWeatherData(data)
     } catch (error) {
       console.log(error.message)
