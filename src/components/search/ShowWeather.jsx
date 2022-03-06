@@ -5,7 +5,8 @@ function ShowWeather({ data }) {
 
   return (
     <div>
-      <h1>{data.main.temp}</h1>
+      <h1>Temp is: {data.main.temp} deg C</h1>
+      <p>Every other required data can be shown here as well</p>
     </div>
   )
 }

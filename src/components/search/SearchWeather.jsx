@@ -1,12 +1,24 @@
 import { useState } from "react"
 
-function SearchWeather({ handleAdd }) {
+function SearchWeather({ setWeatherData }) {
   const [text, setText] = useState("")
+
+  async function fetchData(name) {
+    try {
+      const response = await fetch(
+        `https://api.openweathermap.org/data/2.5/weather?q=${name}&units=metric&appid=${process.env.REACT_APP_API_KEY}`
+      )
+      const data = await response.json()
+      console.log(data)
+      setWeatherData(data)
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const newWeather = text
-    handleAdd(newWeather)
+    fetchData(text)
     setText("")
   }
 
